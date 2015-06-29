@@ -3,6 +3,7 @@ package com.pentarex.fhfx.reborn.controllers;
 import java.beans.EventHandler;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.charset.Charset;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -81,7 +82,7 @@ public class NewsController  implements Initializable{
 		WeatherBean weatherBean = wi.getDailyWeather();
 		if(weatherBean != null){
 			weatherImage.setImage(new Image(weatherBean.getIcon()));
-			degreesLabel.setText(weatherBean.getCity() + " " + weatherBean.getTemp() +"°");
+			degreesLabel.setText(weatherBean.getCity() + " " + weatherBean.getTemp() + "\u00B0");
 		} else {
 			degreesLabel.setText(resourceBundle.getString("news.noWeather"));
 		}

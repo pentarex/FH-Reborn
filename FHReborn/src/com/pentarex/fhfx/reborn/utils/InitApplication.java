@@ -11,19 +11,20 @@ public class InitApplication {
 	public static void firstRun(){
 		//Utils.getUserOS();
 		Font.loadFont(InitApplication.class.getResource("/com/pentarex/fhfx/reborn/resources/fonts/KlaberFraktur.ttf").toExternalForm(), 24);
+		Font.loadFont(InitApplication.class.getResource("/com/pentarex/fhfx/reborn/resources/fonts/FenixStd.otf").toExternalForm(), 12);
 		checkFolder();
 		checkDatabase();
 	}
 	
 	private static void checkFolder(){
-		File applicationDir = new File(ApplicationInfo.APPLICATION_DIR);
+		File applicationDir = new File(ApplicationInfo.getApplicationDir());
     	if(!applicationDir.exists()) {
     		applicationDir.mkdir();
     	}
 	}
 	
 	private static void checkDatabase(){
-		File databaseFile = new File(ApplicationInfo.DATABASE_DIR);
+		File databaseFile = new File(ApplicationInfo.getDatabaseDIR());
 		if(!databaseFile.exists()){
 			Database.createDatabase();
 		}

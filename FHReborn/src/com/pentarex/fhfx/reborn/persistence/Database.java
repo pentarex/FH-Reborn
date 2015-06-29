@@ -20,7 +20,7 @@ public class Database {
         try {
             Class.forName("org.sqlite.JDBC");
             // create a database connection
-            connection = DriverManager.getConnection("jdbc:sqlite:" + ApplicationInfo.DATABASE_DIR);
+            connection = DriverManager.getConnection("jdbc:sqlite:" + ApplicationInfo.getDatabaseDIR());
             Statement statement = connection.createStatement();
             statement.setQueryTimeout(30); // set timeout to 30 sec.
         } catch (Exception e) {

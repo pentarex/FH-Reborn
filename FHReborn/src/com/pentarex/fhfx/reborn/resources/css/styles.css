@@ -1,3 +1,12 @@
 .label{
     -fx-font: 16px "Times New Roman";
 }
+
+.root{
+    
+}
+
+.label{
+	-fx-font-size: 12pt;
+    -fx-font-family: "Fenix";
+}

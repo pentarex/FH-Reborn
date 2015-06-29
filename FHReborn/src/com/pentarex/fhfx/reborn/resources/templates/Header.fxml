@@ -7,9 +7,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="header" prefHeight="150.0" prefWidth="1024.0" stylesheets="com/pentarex/fhfx/reborn/resources//css/header.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pentarex.fhfx.reborn.controllers.HeaderController">
+<AnchorPane id="header" maxHeight="120.0" prefHeight="120.0" prefWidth="1024.0" stylesheets="com/pentarex/fhfx/reborn/resources//css/header.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pentarex.fhfx.reborn.controllers.HeaderController">
    <children>
-      <GridPane layoutX="10.0" layoutY="10.0" prefHeight="160.0" prefWidth="1034.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <GridPane layoutX="10.0" layoutY="10.0" maxHeight="100.0" prefHeight="100.0" prefWidth="1034.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label text="%header.hello" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" />
             <Label fx:id="usernameLabel" text="%header.username" GridPane.columnIndex="2" GridPane.valignment="CENTER" />
