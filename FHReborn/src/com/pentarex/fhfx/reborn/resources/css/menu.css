@@ -1,0 +1,54 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+#menu{
+    -fx-background-color: red;
+}
+
+.menu .label{
+	-fx-text-fill: white;
+}
+
+.menu-button {
+ -fx-background-color:red;
+}
+
+.menu-button .label {
+ -fx-background-color:red; 
+ -fx-cursor: hand;
+ 
+}
+
+.menu-button:hover .label {
+	-fx-underline: true;
+}
+
+.menu:focused .label {
+    -fx-text-fill: white;
+}
+
+
+.menu-item .label {
+    -fx-text-fill: white;
+}
+
+.menu-item:focused {
+     -fx-background-color: red;
+}
+
+.menu-item:hover .label {
+    -fx-cursor: hand;
+}
+.menu-item .label{
+	-fx-cursor: hand;
+}
+
+.context-menu {
+    -fx-skin: "com.sun.javafx.scene.control.skin.ContextMenuSkin";
+    -fx-background-color: red;
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 0 6 6 6, 0 5 5 5, 0 4 4 4;
+/*    -fx-padding: 0.666667em 0.083333em 0.666667em 0.083333em;  8 1 8 1 */
+    -fx-padding: 0.333333em 0.083333em 0.666667em 0.083333em; /* 4 1 8 1 */
+}

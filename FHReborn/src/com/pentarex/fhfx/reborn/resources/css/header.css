@@ -1,0 +1,9 @@
+#header{
+    -fx-background-color: #FFFFFF;
+}
+
+
+.button {
+    -fx-background-color: transparent;
+    -fx-font: 16px "Times New Roman";
+}
