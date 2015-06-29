@@ -1,8 +1,11 @@
 package com.pentarex.fhfx.reborn.controllers;
 
+import java.awt.Desktop;
+import java.net.URI;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
+
 
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
@@ -14,19 +17,21 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.ScrollPane.ScrollBarPolicy;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
-import javafx.scene.text.TextAlignment;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+
 import org.controlsfx.tools.Borders;
+
 
 import com.pentarex.fh.api.NewsImplementation;
 import com.pentarex.fh.api.beans.FullNewsBean;
 import com.pentarex.fh.api.beans.NewsBean;
-import com.pentarex.fhfx.reborn.utils.Session;
 import com.pentarex.fhfx.reborn.utils.Utils;
 
 public class NewspaperController implements Initializable {
@@ -37,7 +42,6 @@ public class NewspaperController implements Initializable {
 	@FXML
 	private ScrollPane scrollPane;
 
-	private Session session = Session.getSession();
 	private ResourceBundle resourceBundle;
 
 	public void populateNews(List<NewsBean> news) {
@@ -69,7 +73,6 @@ public class NewspaperController implements Initializable {
 		task.setOnSucceeded(event -> {
 			try {
 				FullNewsBean fnb = task.get();
-				System.out.println(fnb.getDescription() + " " + fnb.getArticle());
 				createArticleDialog(fnb);
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -85,7 +88,8 @@ public class NewspaperController implements Initializable {
         ScrollPane scrollArticlePane = new ScrollPane();
         scrollArticlePane.setFitToHeight(true);
         scrollArticlePane.setFitToWidth(true);
-        scrollArticlePane.setHbarPolicy(ScrollBarPolicy.NEVER);
+        scrollArticlePane.setHbarPolicy(ScrollBarPolicy.AS_NEEDED);
+        
         AnchorPane anchorArticlePane = new AnchorPane();
         
         VBox dialogVbox = new VBox(20);
@@ -93,13 +97,27 @@ public class NewspaperController implements Initializable {
         dialogVbox.setAlignment(Pos.CENTER);
         
         Label title = new Label(fullArticle.getTitle());
-        Label article = new Label(fullArticle.getArticle());
-        article.setWrapText(true);
-        article.setTextAlignment(TextAlignment.JUSTIFY);
         
-        dialogVbox.getChildren().addAll(title, article);
+        Image image = new Image(fullArticle.getImageUrl());
+        ImageView imageView = new ImageView();
+        if(image != null) imageView.setImage(image);
+        
+        Text article = new Text(fullArticle.getArticle());
+        article.setWrappingWidth(580);
+        
+        Hyperlink link = new Hyperlink(fullArticle.getLink());
+        link.setText("Open website"); //TODO i18n
+        link.setOnAction(linkClicked -> {
+        	try {
+				Desktop.getDesktop().browse(new URI(fullArticle.getLink()));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+        });
+        
+        dialogVbox.getChildren().addAll(title, imageView, article, link);
         anchorArticlePane.getChildren().add(dialogVbox);
-        scrollArticlePane.setContent(anchorArticlePane);
+        scrollArticlePane.setContent(dialogVbox);
         
         Scene dialogScene = new Scene(scrollArticlePane, 600, 500);
         dialog.setTitle(fullArticle.getTitle());

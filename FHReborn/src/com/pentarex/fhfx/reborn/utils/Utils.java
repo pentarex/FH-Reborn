@@ -1,11 +1,6 @@
 package com.pentarex.fhfx.reborn.utils;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -32,7 +27,6 @@ public class Utils {
 		try{
 			in = Utils.class.getResourceAsStream("/com/pentarex/fhfx/reborn/resources/external/departments.txt");
 	        reader = new BufferedReader(new InputStreamReader(in));
-	        StringBuilder out = new StringBuilder();
 	        String line;
 	        while ((line = reader.readLine()) != null) {
 	        	departmentsList.add(line);

@@ -1,41 +1,24 @@
 package com.pentarex.fhfx.reborn.controllers;
 
-import java.beans.EventHandler;
 import java.io.IOException;
 import java.net.URL;
-import java.nio.charset.Charset;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import org.controlsfx.tools.Borders;
-
 import javafx.application.Platform;
-import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Pos;
-import javafx.scene.Node;
-import javafx.scene.Scene;
-import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 
 import com.pentarex.fh.api.FHServicesImpl;
-import com.pentarex.fh.api.NewsImplementation;
-import com.pentarex.fh.api.beans.FullNewsBean;
 import com.pentarex.fh.api.beans.NewsBean;
-import com.pentarex.fhfx.reborn.persistence.Database;
 import com.pentarex.fhfx.reborn.utils.Session;
 import com.pentarex.fhfx.reborn.utils.Spinner;
 import com.pentarex.fhfx.reborn.utils.Utils;

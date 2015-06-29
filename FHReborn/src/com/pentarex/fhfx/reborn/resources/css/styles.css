@@ -1,9 +1,5 @@
-.label{
-    -fx-font: 16px "Times New Roman";
-}
-
 .root{
-    
+	-fx-background-color: #FFFFFF;
 }
 
 .label{

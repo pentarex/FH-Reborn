@@ -2,7 +2,6 @@ package com.pentarex.fhfx.reborn.controllers;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.Locale;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
@@ -13,18 +12,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import javafx.util.Pair;
 
 import org.controlsfx.dialog.LoginDialog;
 
-import com.pentarex.fhfx.reborn.Main;
 import com.pentarex.fhfx.reborn.persistence.Database;
-import com.pentarex.fhfx.reborn.utils.ApplicationInfo;
 import com.pentarex.fhfx.reborn.utils.InitApplication;
 import com.pentarex.fhfx.reborn.utils.Session;
 
