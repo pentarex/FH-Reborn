@@ -10,7 +10,7 @@ public class ApplicationInfo {
 	
 	public static String getApplicationDir(){
 		String OS = Utils.getUserOS();
-		if(OS.contains("windows")){
+		if(OS.toLowerCase().contains("windows")){
 			APPLICATION_DIR = System.getProperty("user.home") + "\\FHReborn";
 		} else {
 			APPLICATION_DIR = System.getProperty("user.home") + "/FHReborn";
@@ -20,7 +20,7 @@ public class ApplicationInfo {
 	
 	public static String getDatabaseDIR(){
 		String OS = Utils.getUserOS();
-		if(OS.contains("windows")){
+		if(OS.toLowerCase().contains("windows")){
 			DATABASE_DIR = APPLICATION_DIR + "\\database.db";
 		} else {
 			DATABASE_DIR = APPLICATION_DIR + "/database.db";

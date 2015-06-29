@@ -60,7 +60,6 @@ public class Utils {
 	
 	public static String getUserOS(){
 		String OS = System.getProperty("os.name");
-		System.out.println(OS);
 		return OS;
 	}
 	
