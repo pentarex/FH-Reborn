@@ -3,9 +3,12 @@ package com.pentarex.fhfx.reborn.controllers;
 import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
+import java.util.Collection;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.Set;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -17,8 +20,11 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
+import com.google.common.collect.Multimap;
 import com.pentarex.fh.api.FHServicesImpl;
+import com.pentarex.fh.api.beans.MarksBean;
 import com.pentarex.fh.api.beans.NewsBean;
+import com.pentarex.fh.api.beans.ScheduleBean;
 import com.pentarex.fhfx.reborn.utils.Session;
 import com.pentarex.fhfx.reborn.utils.Spinner;
 import com.pentarex.fhfx.reborn.utils.Utils;
@@ -79,6 +85,17 @@ public class NewsController  implements Initializable{
 	private void initNews(){
 		FHServicesImpl fhServices = new FHServicesImpl();
 		news = fhServices.getNews();
+		/*Multimap<String, MarksBean> map = fhServices.getMarks("hristovh14", "qwe789.321poi");
+		Set<String> set = map.keySet();
+		Iterator<String> iter = set.iterator();
+		while(iter.hasNext()){
+			String semester = iter.next();
+			Collection<MarksBean> marksList = map.get(semester);
+			System.out.println(semester);
+			for(MarksBean marks : marksList){
+				System.out.println(marks.getTitle() + " " + marks.getGrade());
+			}
+		}*/
 		initNewspaper();
 	}
 	

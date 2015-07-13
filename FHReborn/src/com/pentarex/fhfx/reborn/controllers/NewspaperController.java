@@ -97,8 +97,9 @@ public class NewspaperController implements Initializable {
         dialogVbox.setAlignment(Pos.CENTER);
         
         Label title = new Label(fullArticle.getTitle());
-        
-        Image image = new Image(fullArticle.getImageUrl());
+        Image image = null;
+        if(fullArticle.getImageUrl() != null)
+        image = new Image(fullArticle.getImageUrl());
         ImageView imageView = new ImageView();
         if(image != null) imageView.setImage(image);
         
